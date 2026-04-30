@@ -66,3 +66,76 @@ export default TabLayout;
 awesome its worked.
 
 Tabs Navigation completed  1:24.
+
+--------
+
+Typography 
+Custom Fonts 1:28 
+
+STEP1: 
+goto app.json file
+under plugins, add this
+
+      ["expo-font",{"fonts":[
+        "./assets/fonts/PlusJakartaSans-Regular.ttf",
+        "./assets/fonts/PlusJakartaSans-Medium.ttf",
+        "./assets/fonts/PlusJakartaSans-SemiBold.ttf",
+        "./assets/fonts/PlusJakartaSans-Bold.ttf",
+        "./assets/fonts/PlusJakartaSans-ExtraBold.ttf",
+        "./assets/fonts/PlusJakartaSans-Black.ttf",
+        "./assets/fonts/PlusJakartaSans-Light.ttf"
+      ]}]
+
+      STEP2:
+
+      Add them in root _layout.tsx
+      inside the main function
+
+        const [fontsloaded] = useFonts({
+       'sans-regular': require('./assets/fonts/PlusJakartaSans-Regular.ttf'),
+        'sans-medium': require('./assets/fonts/PlusJakartaSans-Medium.ttf'),
+        'sans-semibold': require('./assets/fonts/PlusJakartaSans-SemiBold.ttf'),
+        'sans-bold': require('./assets/fonts/PlusJakartaSans-Bold.ttf'),
+        'sans-extrabold': require('./assets/fonts/PlusJakartaSans-ExtraBold.ttf'),
+        'sans-black': require('./assets/fonts/PlusJakartaSans-Black.ttf'),
+        'sans-light': require('./assets/fonts/PlusJakartaSans-Light.ttf')
+        
+  })
+
+    useEffect(()=>{
+    if(fontsloaded){
+      SplashScreen.hideAsync();
+    }
+  },
+  [fontsloaded]
+)
+
+if(!fontsloaded)
+  return null;
+
+
+  STEP3:
+
+  Goto global.css
+  add this under the colors section
+
+      --font-sans: sans-regular;
+    --font-sans-light: sans-light;
+    --font-sans-medium: sans-medium;
+    --font-sans-semibold: sans-semibold;
+    --font-sans-bold: sans-bold;
+    --font-sans-extrabold: sans-extrabold;
+
+
+    Step4:
+    Use in index.tsx 
+
+    <Link href="/onboarding" className="mt-4 font-sans-bold  rounded bg-primary p-4  text-white" >Go to onboarding...
+      </Link>
+         <Link href="/(auth)/signIn" className="mt-4 font-sans-bold rounded bg-primary p-4  text-white" >Go to signIn...
+      </Link>
+          <Link href="/(auth)/signUp" className="mt-4 font-sans-bold rounded bg-primary p-4  text-white" >Go to signUp...
+      </Link>
+    
+
+
