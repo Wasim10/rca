@@ -8,7 +8,7 @@ const SubscriptionDetails = () => {
   return (
     <View>
       <Text>SubscriptionDetails: {id}</Text>
-      <Link href="/">Back Back</Link>
+      <Link href="/">Back</Link>
     </View>
   )
 }

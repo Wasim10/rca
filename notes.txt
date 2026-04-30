@@ -44,4 +44,25 @@ rnfe
 write some dummy code 
 code pushed to github with copilot github 
 
+8) Tabs Navigation
+1:03:10
 
+create file _layout.tsx inside the (tabs) folder
+paste the following code
+/*
+import { Tabs } from "expo-router";
+
+const TabLayout = () => (
+        <Tabs screenOptions={{headerShown: false}}>
+            <Tabs.Screen name="index" options={{ title: "Home" }} />
+
+        </Tabs>    
+)
+
+export default TabLayout;
+
+*/
+
+awesome its worked.
+
+Tabs Navigation completed  1:24.
